@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-ef build() {
+def call() {
     echo "building the application..."
     sh 'npm install' 
 }
