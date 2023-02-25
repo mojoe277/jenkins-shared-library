@@ -4,7 +4,7 @@ def call(String imageName) {
     echo "building the docker image..."
     withCredentials([script.usernamePassword(credentialsId: 'docker-hub-repo', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
         sh "docker build -t $imageName ."
-        sh "echo $script.PASS | docker login -u $script.USER --password-stdin"
+        sh "echo $PASS | docker login -u $USER --password-stdin"
         sh "docker push $imageName"
     }
 }    
