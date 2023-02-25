@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-package com.example
+package com.app
 
 def call() {
      return new Docker(this).dockerLogin()   
